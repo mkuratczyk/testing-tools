@@ -2,7 +2,7 @@ FROM emqx/emqtt-bench:latest AS emqtt-bench
 FROM erlang:latest as erlang
 FROM pivotalrabbitmq/perf-test:dev as amqp091-perf-test
 FROM pivotalrabbitmq/stream-perf-test:dev as stream-perf-test
-FROM mkuratczyk/omq:latest as omq
+FROM pivotalrabbitmq/omq:latest as omq
 
 FROM ubuntu
 
