@@ -1,6 +1,6 @@
-FROM pivotalrabbitmq/perf-test:dev as amqp091-perf-test
-FROM pivotalrabbitmq/stream-perf-test:dev as stream-perf-test
-FROM pivotalrabbitmq/omq:latest as omq
+FROM pivotalrabbitmq/perf-test:dev AS amqp091-perf-test
+FROM pivotalrabbitmq/stream-perf-test:dev AS stream-perf-test
+FROM pivotalrabbitmq/omq:latest AS omq
 
 FROM ubuntu
 
@@ -16,7 +16,7 @@ RUN apt-get install -y --no-install-recommends \
 RUN wget --no-check-certificate --progress=bar:force:noscroll https://raw.githubusercontent.com/rabbitmq/rabbitmq-server/main/deps/rabbitmq_management/bin/rabbitmqadmin -O /usr/local/bin/rabbitmqadmin
 RUN chmod 755 /usr/local/bin/rabbitmqadmin
 
-RUN wget --no-check-certificate --progress=bar:force:noscroll https://github.com/rabbitmq/rabbitmqadmin-ng/releases/download/v0.11.0/rabbitmqadmin-0.11.0-x86_64-unknown-linux-gnu.tar.gz /tmp/rabbitmqadmin.tar.gz
+RUN wget --no-check-certificate --progress=bar:force:noscroll https://github.com/rabbitmq/rabbitmqadmin-ng/releases/download/v0.11.0/rabbitmqadmin-0.11.0-x86_64-unknown-linux-gnu.tar.gz -O /tmp/rabbitmqadmin.tar.gz
 RUN tar -xvf /tmp/rabbitmqadmin.tar.gz -C /tmp
 RUN mv /tmp/rabbitmqadmin /usr/local/bin/rabbitmqadmin-ng
 
