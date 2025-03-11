@@ -16,7 +16,7 @@ RUN apt-get update
 RUN apt-get install -y --no-install-recommends wget
 RUN apt-get clean autoclean && apt-get autoremove --yes && rm -rf /var/lib/{apt,dpkg,cache,log}/
 
-RUN wget --no-check-certificate --progress=bar:force:noscroll https://github.com/rabbitmq/rabbitmqadmin-ng/releases/download/v0.26.0/rabbitmqadmin-0.26.0-x86_64-unknown-linux-gnu -O /usr/local/bin/rabbitmqadmin-ng
+RUN wget --no-check-certificate --progress=bar:force:noscroll https://github.com/rabbitmq/rabbitmqadmin-ng/releases/download/v0.27.0/rabbitmqadmin-0.27.0-x86_64-unknown-linux-gnu -O /usr/local/bin/rabbitmqadmin-ng
 RUN chmod 755 /usr/local/bin/rabbitmqadmin-ng
 
 CMD [""]
